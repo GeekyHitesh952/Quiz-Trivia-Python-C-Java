@@ -28,12 +28,12 @@ class Project:
 
     def set_(self):
         if self.que==None:
-            messageboxshowinfo("Error","Please select course first...")
+            messageboxshowinfo("Error","Please select the course first...")
             
         self.count+=1
 
         if self.count==len(self.que):
-            messagebox.showinfo("Result","You have answered {0} out of {1} questions correctly".format(self.correct,self.count))
+            messagebox.showinfo("Results","You have answered {0} out of {1} questions correctly".format(self.correct,self.count))
             exit()
 
         if(self.count==len(self.que)-1):
@@ -83,7 +83,8 @@ for i in range(0,4):
 v=[]
 for i in range(0,4):
     v.append(StringVar())
-
+fori in range(4,0):
+    b.append(Button())
    
 b[0]=Button(scr,textvariable=v[0],font=("consolas",20),anchor="w",width=20,activebackground="light blue",command=lambda :obj.fun(v[0].get(),b[0]))
 b[0].grid(row=2,column=0,sticky=W)
@@ -100,5 +101,5 @@ b[3].grid(row=3,column=1,sticky=S)
 B=Button(scr,text="Start",font=("consolas",20),width=40,height=1,bg="black",fg="white",command=obj.set_)
 B.grid(row=10,column=0,columnspan=2,sticky="news")
 #B.geometry('{0}x{1}+0+0'.format(scr.winfo_screenwidth(),200))
-
+scr.mainloop()
 
